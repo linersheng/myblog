@@ -2,7 +2,7 @@
 
 ```
 #配置用户信息
-git config --global user.email "xxx9@qq.com"
+git config --global user.email "xxx@qq.com"
 git config --global user.name "xxx"
 
 #拉取服务代码
