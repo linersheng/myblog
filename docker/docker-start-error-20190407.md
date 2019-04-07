@@ -1,3 +1,5 @@
+# Docker 启动容器报错(命名冲突) #
+
 运行：
 docker run -d -p 6379:6379 --name="myredis" redis redis-server --appendonly yes
 
