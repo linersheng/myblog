@@ -48,15 +48,14 @@ func subscribe() {
 
 ## 遇到问题 ##
 1. 接收不到超时事件
+ 修改配置文件，设置"notify-keyspace-events Kex"   
+ 测试可以参考 [Redis系列—Redis事件订阅](https://blog.csdn.net/u012758088/article/details/77285499)   
 
->> 修改配置文件，设置"notify-keyspace-events Kex"   
->> 测试可以参考 [Redis系列—Redis事件订阅](https://blog.csdn.net/u012758088/article/details/77285499)
+2. 不知道c.Receive()返回的reply是什么类型   
+  通过fmt.Println(reflect.TypeOf(reply))得知是[]interface{}类型  
 
-2. 不知道c.Receive()返回的reply是什么类型
->> 通过fmt.Println(reflect.TypeOf(reply))得知是[]interface{}类型  
-
-3. 如何解析数据，是否可以拿到key和value
->>官方给的另一种写法，已经解析好数据，但是没拿到value
+3. 如何解析数据，是否可以拿到key和value   
+  官方给的另一种写法，已经解析好数据，但是没拿到value   
 ```golang
 //Example1：
 c.Send("SUBSCRIBE", "example")
@@ -83,7 +82,7 @@ for {
     }
 }
 ```
->> 尝试直接写代码接解析，遇到不知道的类型，就用反射来打印。看了psc.Receive()方法，实现起来很复杂，所以还是自己来做转换出来快,看了源码，才知道拿不到value.
+  尝试直接写代码接解析，遇到不知道的类型，就用反射来打印。看了psc.Receive()方法，实现起来很复杂，所以还是自己来做转换出来快,看了源码，才知道拿不到value.
 
 4. 如何判断接收到的消息是什么类型
 ```shell
@@ -98,4 +97,4 @@ int value: 2
 []byte value: __keyspace@0__:lines
 []byte value: expired
 ```
->> reply.([]interface{})转换出来的第一个值就是消息的类型，**psubscribe**、**pmessage**就是消息的第一个值。
+    reply.([]interface{})转换出来的第一个值就是消息的类型，**psubscribe**、**pmessage**就是消息的第一个值。
