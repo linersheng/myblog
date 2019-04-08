@@ -97,4 +97,4 @@ int value: 2
 []byte value: __keyspace@0__:lines
 []byte value: expired
 ```
-    reply.([]interface{})转换出来的第一个值就是消息的类型，**psubscribe**、**pmessage**就是消息的第一个值。
+    reply.([]interface{})转换出来的第一个值就是消息的类型，"psubscribe"、"pmessage"就是消息的第一个值。
