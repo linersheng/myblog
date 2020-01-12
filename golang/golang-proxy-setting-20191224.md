@@ -13,7 +13,9 @@ rm -rf text/.git
 ```
 ## 2. 设置代理
 ```shell
-https://goproxy.io/
+# Enable the go modules feature
+export GO111MODULE=on
+# Set the GOPROXY environment variable
 export GOPROXY=https://goproxy.io
 ```
 
