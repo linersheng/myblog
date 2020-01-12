@@ -13,8 +13,10 @@ rm -rf text/.git
 ```
 ## 2. 设置代理
 ```shell
+https://goproxy.io/
 export GOPROXY=https://goproxy.io
 ```
 
 ## 参考:
-[一键解决 go get golang.org/x 包失败](https://segmentfault.com/a/1190000018264719)
+[一键解决 go get golang.org/x 包失败](https://segmentfault.com/a/1190000018264719)   
+[goproxy.io](https://goproxy.io/)
