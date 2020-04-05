@@ -22,6 +22,19 @@ git push
 
 #更新本地代码
 git pull
+
+#储藏工作内容
+git stash
+
+#查看现有的储藏
+git stash list
+
+#恢复储藏
+git stash apply stash@{2}
+
+#删除储藏
+git stash drop stash@{0}
+
 ```
 
 ### 网络篇
