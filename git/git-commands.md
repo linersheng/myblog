@@ -6,7 +6,7 @@ git config --global user.email "xxx@qq.com"
 git config --global user.name "xxx"
 
 #拉取服务代码
-git clone https://github.com/linersheng/gelian.git
+git clone https://github.com/xxxx/xxxx.git
 
 #添加本地文件
 git add ./
@@ -17,14 +17,29 @@ git status
 #提交代码
 git commit -m "first time upload"
 
-#推送到服务器
+#创建develop分支
+git checkout -b develop
+
+#切换到develop分支
+git checkout develop
+
+#查看当前所在分支
+git branch
+
+#查看所有分支
+git branch -a
+
+#推送到服务器master分支
 git push
+
+#推送到服务器develop分支
+git push origin develop
 
 #更新本地代码
 git pull
 
 #储藏工作内容
-git stash
+git stash save "xxx"
 
 #查看现有的储藏
 git stash list
